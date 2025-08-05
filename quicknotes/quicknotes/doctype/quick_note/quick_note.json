@@ -1,0 +1,124 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-05 12:22:40.140627",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "content",
+  "content_delta",
+  "is_public",
+  "owner_full_name",
+  "column_break_5",
+  "tags",
+  "last_edited_by",
+  "last_edited_at",
+  "section_break_9",
+  "shared_with"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Long Text",
+   "label": "Content"
+  },
+  {
+   "fieldname": "content_delta",
+   "fieldtype": "Long Text",
+   "label": "Content Delta (Quill.js)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_public",
+   "fieldtype": "Check",
+   "label": "Public Note"
+  },
+  {
+   "fieldname": "tags",
+   "fieldtype": "Data",
+   "label": "Tags"
+  },
+  {
+   "fieldname": "last_edited_by",
+   "fieldtype": "Link",
+   "label": "Last Edited By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_edited_at",
+   "fieldtype": "Datetime",
+   "label": "Last Edited At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break",
+   "label": "Sharing"
+  },
+  {
+   "fieldname": "shared_with",
+   "fieldtype": "Table",
+   "label": "Shared With",
+   "options": "Quick Note Share"
+  },
+  {
+   "fieldname": "owner_full_name",
+   "fieldtype": "Data",
+   "label": "Owner Name",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-05 12:22:40.140627",
+ "modified_by": "Administrator",
+ "module": "QuickNotes",
+ "name": "Quick Note",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}

@@ -1,0 +1,242 @@
+.quicknotes-app {
+	display: flex;
+	height: 100vh;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+#notes-sidebar {
+	width: 300px;
+	background: #f8f9fa;
+	border-right: 1px solid #dee2e6;
+	overflow-y: auto;
+	flex-shrink: 0;
+}
+
+.notes-header {
+	padding: 20px;
+	border-bottom: 1px solid #dee2e6;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.notes-header h3 {
+	margin: 0;
+	color: #495057;
+}
+
+.notes-sections {
+	padding: 0;
+}
+
+.notes-section {
+	margin-bottom: 20px;
+}
+
+.notes-section h4 {
+	padding: 10px 20px 5px;
+	margin: 0;
+	font-size: 14px;
+	font-weight: 600;
+	color: #6c757d;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.note-item {
+	padding: 12px 20px;
+	cursor: pointer;
+	border-bottom: 1px solid #f0f0f0;
+	transition: background-color 0.2s;
+}
+
+.note-item:hover {
+	background-color: #e9ecef;
+}
+
+.note-item.active {
+	background-color: #007bff;
+	color: white;
+}
+
+.note-item.active .note-meta small {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.note-title {
+	font-weight: 500;
+	margin-bottom: 4px;
+	font-size: 14px;
+}
+
+.note-meta {
+	font-size: 12px;
+	color: #6c757d;
+}
+
+.note-tags {
+	margin-top: 4px;
+	font-size: 11px;
+	color: #28a745;
+}
+
+#note-editor {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.note-header {
+	padding: 20px;
+	border-bottom: 1px solid #dee2e6;
+	background: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.note-title-section h2 {
+	margin: 0 0 8px 0;
+	font-size: 28px;
+	font-weight: 400;
+	outline: none;
+	border: none;
+	padding: 4px 8px;
+	border-radius: 4px;
+	transition: background-color 0.2s;
+}
+
+.note-title-section h2:focus {
+	background-color: #f8f9fa;
+}
+
+.note-title-section .note-meta {
+	color: #6c757d;
+	font-size: 14px;
+}
+
+.note-actions {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.active-users {
+	display: flex;
+	gap: 5px;
+}
+
+.active-user-badge {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: #007bff;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 500;
+	font-size: 14px;
+}
+
+.note-content {
+	flex: 1;
+	overflow: hidden;
+	background: white;
+}
+
+#quill-editor {
+	height: 100%;
+}
+
+.ql-editor {
+	padding: 20px 40px;
+	font-size: 16px;
+	line-height: 1.6;
+	height: calc(100vh - 200px);
+	overflow-y: auto;
+}
+
+.ql-toolbar {
+	border-left: none;
+	border-right: none;
+	border-top: none;
+}
+
+.ql-container {
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+	height: calc(100% - 42px);
+}
+
+/* Empty state */
+.empty-state {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #6c757d;
+	text-align: center;
+}
+
+.empty-state h3 {
+	margin-bottom: 10px;
+}
+
+.empty-state p {
+	margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.quicknotes-app {
+		flex-direction: column;
+	}
+
+	#notes-sidebar {
+		width: 100%;
+		height: 200px;
+	}
+
+	.note-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+	}
+
+	.ql-editor {
+		padding: 15px 20px;
+		font-size: 14px;
+	}
+}
+
+/* Loading states */
+.loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px;
+	color: #6c757d;
+}
+
+.spinner {
+	width: 20px;
+	height: 20px;
+	border: 2px solid #f3f3f3;
+	border-top: 2px solid #007bff;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+	margin-right: 10px;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

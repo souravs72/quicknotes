@@ -1,7 +1,9 @@
 app_name = "quicknotes"
 app_title = "QuickNotes"
-app_publisher = "sourav@clapgrow.com"
+app_publisher = "Sourav Singh"
 app_description = "Real-time collaborative note-taking app"
+app_icon = "octicon octicon-file-text"
+app_color = "grey"
 app_email = "sourav@clapgrow.com"
 app_license = "mit"
 
@@ -23,6 +25,9 @@ app_license = "mit"
 
 # Includes in <head>
 # ------------------
+
+app_include_css = "/assets/quicknotes/css/quicknotes.css"
+app_include_js = "/assets/quicknotes/js/quicknotes.bundle.js"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/quicknotes/css/quicknotes.css"
@@ -47,7 +52,10 @@ app_license = "mit"
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
-
+website_context = {
+    "favicon": "/assets/quicknotes/images/favicon.png",
+    "splash_image": "/assets/quicknotes/images/splash.png",
+}
 # Svg Icons
 # ------------------
 # include app icons in desk
@@ -140,6 +148,13 @@ app_license = "mit"
 # 	}
 # }
 
+doc_events = {
+    "Quick Note": {
+        "on_update": "quicknotes.quicknotes.api.note_updated",
+        "after_insert": "quicknotes.quicknotes.api.note_created",
+    }
+}
+
 # Scheduled Tasks
 # ---------------
 
@@ -160,6 +175,10 @@ app_license = "mit"
 # 		"quicknotes.tasks.monthly"
 # 	],
 # }
+
+scheduler_events = {
+    "cron": {"0/5 * * * *": ["quicknotes.quicknotes.tasks.cleanup_inactive_sessions"]}
+}
 
 # Testing
 # -------
@@ -236,4 +255,3 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
